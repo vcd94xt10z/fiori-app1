@@ -27,7 +27,21 @@ function (BaseController) {
 			oArgs = oEvent.getParameter("arguments");
 			oView = this.getView();
 
-			alert(oArgs.rewrite);
+			console.log(oArgs.rewrite);
+
+            // Exemplo para carregar dados de forma global (definido no manifest)
+            window.productList = this.getOwnerComponent().getModel("productList").getData();
+
+            // Exemplo para carregar dados de forma local (somente nesse controller)
+            if(window.productList.length == 0){
+                var oModel = new sap.ui.model.json.JSONModel();
+                oModel.loadData("/model/productList.json");
+                oModel.attachRequestCompleted(function(){
+                    window.productList = oModel.getData();
+                });
+            }
+
+            
 		}
     });
 });

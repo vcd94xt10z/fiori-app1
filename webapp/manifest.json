@@ -18,6 +18,10 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "4.0"
         }
+      },
+      "productList": {
+        "uri": "model/productList.json",
+        "type": "JSON"
       }
     }
   },
@@ -55,6 +59,10 @@
         "settings": {
           "bundleName": "vcd94xt10z.app1.fioriapp1.i18n.i18n"
         }
+      },
+      "productList":{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "productList"
       },
       "": {
         "dataSource": "mainService",

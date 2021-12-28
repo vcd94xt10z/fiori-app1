@@ -1,0 +1,16 @@
+[
+    {
+        "productid": "70",
+        "name": "Pilha potente",
+        "price": 1.99,
+        "stock": 5,
+        "image": "http://teste.com/foto1.jpg"
+    },
+    {
+        "productid": "71",
+        "name": "Teclado gamer",
+        "price": 45.50,
+        "stock": 3,
+        "image": "http://teste.com/foto2.jpg"
+    }
+]
