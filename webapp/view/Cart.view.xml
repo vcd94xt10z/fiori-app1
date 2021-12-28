@@ -1,0 +1,12 @@
+<mvc:View
+    controllerName="vcd94xt10z.app1.fioriapp1.controller.Cart"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onPageBack">
+        <content>
+            <Text text="Cart"/>
+        </content>
+    </Page>
+</mvc:View>

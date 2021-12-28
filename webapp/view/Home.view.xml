@@ -1,0 +1,14 @@
+<mvc:View
+    controllerName="vcd94xt10z.app1.fioriapp1.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Text text="Home"/>
+            <Button text="Cart" press="onCart"/>
+            <Button text="ProductDetail" press="onProductDetail"/>
+        </content>
+    </Page>
+</mvc:View>
