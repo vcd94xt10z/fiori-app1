@@ -1,3 +1,6 @@
+/**
+ * Controller para a home
+ */
 sap.ui.define([
     "vcd94xt10z/app1/fioriapp1/controller/BaseController"
 ],

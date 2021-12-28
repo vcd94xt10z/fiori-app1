@@ -8,7 +8,7 @@
         <content>
             <Text text="Home"/>
             <Button text="Cart" press="onCart"/>
-            <Button text="ProductDetail" press="onProductDetail"/>
+            <Button text="Pilha" press="onPilha"/>
         </content>
     </Page>
 </mvc:View>

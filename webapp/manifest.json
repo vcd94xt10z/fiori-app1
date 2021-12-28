@@ -99,6 +99,13 @@
           "target": [
             "TargetCart"
           ]
+        },
+        {
+          "name": "RouteProductDetail",
+          "pattern": "p/{rewrite}",
+          "target": [
+            "TargetProductDetail"
+          ]
         }
       ],
       "targets": {
