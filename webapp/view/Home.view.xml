@@ -27,7 +27,7 @@
 			<Panel id="panelForGridList">
 					<headerToolbar>
 						<Toolbar height="3rem">
-							<Title text="GridList with default grid layout" />
+							<Title text="Produtos em Destaque" />
 						</Toolbar>
 					</headerToolbar>
 
@@ -40,7 +40,7 @@
 							<layoutData>
 								<FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
 							</layoutData>
-							<Image src="https://static.hayapek.com.br/produtos/{view>productid}/250/1.jpg" width="100%" press="onPilha"/>
+							<Image src="https://static.hayapek.com.br/produtos/{view>productid}/250/1.jpg" width="100%" press="onOpenProduct"/>
 							<Title text="{view>name}" wrapping="true"/>
 							<Label text="{view>price}" wrapping="true" />
 							<Button text="Comprar" press="onCart"/>

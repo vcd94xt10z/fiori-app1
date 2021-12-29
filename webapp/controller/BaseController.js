@@ -39,8 +39,10 @@ sap.ui.define([
             /**
              * Vai para a página da pilha
              */
-            onPilha: function(){
-                this.getRouter().navTo("RouteProductDetail",{"rewrite":"pilha-10v"});
+            onOpenProduct: function(oEvent){
+                var oContext = oEvent.getSource().getBindingContext("view");
+                var sRewrite = oContext.getProperty("rewrite");
+                this.getRouter().navTo("RouteProductDetail",{"rewrite":sRewrite});
             },
 
             /**
