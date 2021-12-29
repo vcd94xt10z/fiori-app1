@@ -6,6 +6,8 @@
     xmlns="sap.m"
     xmlns:card="sap.f.cards"
     xmlns:f="sap.f"
+	xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:l="sap.ui.layout"
 >
     <Page id="page" title="{i18n>title}">
         <content>
@@ -22,77 +24,33 @@
             </Carousel>
 
             <!-- LISTA DE PRODUTOS -->
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
+			<Panel id="panelForGridList">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="GridList with default grid layout" />
+						</Toolbar>
+					</headerToolbar>
 
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
+					<f:GridList id="gridList"
+						
+						items="{ path: 'view>/productList' }">
+				<CustomListItem>
+					<VBox height="100%">
+						<VBox class="sapUiSmallMargin">
+							<layoutData>
+								<FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+							</layoutData>
+							<Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg" width="100%" press="onPilha"/>
+							<Title text="{view>name}" wrapping="true"/>
+							<Label text="{view>price}" wrapping="true" />
+							<Button text="Comprar" press="onCart"/>
+						</VBox>
+					</VBox>
+				</CustomListItem>
+			</f:GridList>
+				</Panel>
 
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
-
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
-
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
-
-            <f:Card class="sapUiTinyMargin" width="220px">
-                <f:header></f:header>
-                <f:content>
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-                        <Image src="https://static.hayapek.com.br/produtos/68504/200/1.jpg"/>
-                        <Title text="Gabinete Gamer Mid Tower Scar RGB AEROCOOL"/>
-                        <Text text="R$ 680,15"/>
-                        <Button text="Comprar" press="onPilha"/>
-                    </VBox>
-                </f:content>
-            </f:Card>
+            
 
             <!-- FOOTER -->
             <core:Fragment fragmentName="vcd94xt10z.app1.fioriapp1.fragment.Footer" type="XML" />

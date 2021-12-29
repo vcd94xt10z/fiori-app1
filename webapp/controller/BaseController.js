@@ -32,6 +32,10 @@ sap.ui.define([
                 //this.getRouter().getTargets().display("TargetCart");
             },
 
+            onHome: function(){
+                this.getRouter().navTo("RouteHome");
+            },
+
             /**
              * Vai para a página da pilha
              */

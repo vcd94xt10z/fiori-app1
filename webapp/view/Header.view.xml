@@ -15,7 +15,7 @@
         <l:Grid
             containerQuery="true">
             <html:div class="exampleDiv">
-                <Image src="/img/shop-logo.png"/>
+                <Image src="/img/shop-logo.png" press="onHome"/>
             </html:div>
             <html:div class="exampleDiv">
                 
