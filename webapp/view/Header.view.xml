@@ -1,0 +1,87 @@
+<mvc:View
+    controllerName="vcd94xt10z.app1.fioriapp1.controller.Header"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:tnt="sap.tnt"
+>
+    
+    <!-- CABEÇALHO -->
+    <l:VerticalLayout
+        width="100%" height="220px"
+        class="gridWrapper">
+        <l:Grid
+            containerQuery="true">
+            <html:div class="exampleDiv">
+                <Image src="/img/shop-logo.png"/>
+            </html:div>
+            <html:div class="exampleDiv">
+                
+                <SearchField>
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" />
+                    </layoutData>
+                </SearchField>
+
+            </html:div>
+            <html:div class="exampleDiv">
+
+                <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                    <Text text="Bem vindo" />
+                    <Text text="Entrar" />
+                </l:VerticalLayout>
+
+            </html:div>
+            <html:div class="exampleDiv">
+
+                <Button
+                    id="CarrinhoButton"
+                    class="sapUiTinyMarginBeginEnd"
+                    icon="sap-icon://cart"
+                    type="Default"
+                    press="onCart"
+                    text="Carrinho">
+                    <customData></customData>
+                </Button>
+
+            </html:div>
+        </l:Grid>
+    </l:VerticalLayout>
+
+    <!-- MENU -->
+    <tnt:ToolHeader>
+        <Button icon="sap-icon://menu2" type="Transparent">
+            <layoutData>
+                <OverflowToolbarLayoutData priority="NeverOverflow" />
+            </layoutData>
+        </Button>
+        <MenuButton text="Novidades" type="Transparent">
+            
+        </MenuButton>
+        <MenuButton text="Promoções" type="Transparent">
+            <layoutData>
+                <OverflowToolbarLayoutData priority="Low" />
+            </layoutData>
+        </MenuButton>
+        <MenuButton text="Queima" type="Transparent">
+            <layoutData>
+                <OverflowToolbarLayoutData priority="Low" />
+            </layoutData>
+        </MenuButton>
+        <tnt:ToolHeaderUtilitySeparator />
+        <ToolbarSpacer>
+            <layoutData>
+                <OverflowToolbarLayoutData minWidth="20px" />
+            </layoutData>
+        </ToolbarSpacer>
+        
+        <Button text="Contato" type="Transparent" press=".onUserNamePress" ariaHasPopup="Menu">
+            <layoutData>
+                <OverflowToolbarLayoutData priority="NeverOverflow" />
+            </layoutData>
+        </Button>
+    </tnt:ToolHeader>
+    
+</mvc:View>
