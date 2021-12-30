@@ -4,12 +4,23 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
 >
     <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onPageBack">
         <content>
             <!-- HEADER -->
             <mvc:XMLView viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
-            
+
+            <l:VerticalLayout width="100%" class="sapUiContentPadding">
+		        <l:content>
+                    <Breadcrumbs currentLocationText="Cadeira" separatorStyle="BackSlash">
+                        <Link press="onPress" text="Home"/>
+                        <Link press="onPress" text="Games"/>
+                        <Link press="onPress" text="Acessórios"/>
+                    </Breadcrumbs>
+                </l:content>
+            </l:VerticalLayout>
+
             <l:BlockLayout id="BlockLayout" background="Dashboard">
                 <l:BlockLayoutRow accentCells="Accent1">
                     <l:BlockLayoutCell
@@ -17,13 +28,91 @@
                             title="">
                         <Image id="productImage" src="https://static.hayapek.com.br/produtos/{product>/productid}/500/1.jpg" width="100%" press="onOpenImage"/>
                     </l:BlockLayoutCell>
-                    <l:BlockLayoutCell
-                            title="">
-                        <Text text="{product>/name}"/>
-                        <Text text="{product>/price}"/>
+                    <l:BlockLayoutCell>
+                        <l:VerticalLayout>
+                            <ObjectHeader title="{product>/name}" titleLevel="H2">
+                                <attributes>
+                                    <ObjectAttribute title="Marca" text="{product>/brand}"/>
+                                    <ObjectAttribute title="EAN" text="{product>/ean11}"/>
+                                </attributes>
+                                <statuses>
+                                    <ObjectStatus text="Disponível" state="Success"/>
+                                </statuses>
+                            </ObjectHeader>
+
+                            <Title text="R$ {
+                                        path : 'product>/price',
+                                        formatter : '.formatter.price'
+                                    }" titleStyle="H1" textAlign="Center" width="100%"/>
+
+                            <Button type="Accept"
+                                    text="Comprar"
+                                    press="onComprar"
+                                    width="100%"
+                                    class="sapUiSmallMargin"
+                                    ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+                                <layoutData>
+                                    <FlexItemData growFactor="1" />
+                                </layoutData>
+                            </Button>
+
+                        </l:VerticalLayout>
                     </l:BlockLayoutCell>
                 </l:BlockLayoutRow>
             </l:BlockLayout>
+
+            <VBox class="sapUiSmallMargin">
+                <Title text="Descrição" titleStyle="H1" width="100%"/>
+		        <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat" />
+	        </VBox>
+
+            <VBox class="sapUiSmallMargin">
+                <Table
+                    id="table"
+                    busyIndicatorDelay=""
+                    growing="true"
+                    growingScrollToLoad="true"
+                    noDataText="Sem dados"
+                    updateFinished=".onUpdateFinished"
+                    width="auto"
+                    mode="None"
+                    items="{
+                        path: 'featModel>/featList',
+                        sorter: {
+                            path: 'sequence',
+                            descending: false
+                        }
+                    }">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title
+                            id="tableHeader"
+                            text="Ficha Técnica"/>
+                        <ToolbarSpacer/>
+                    </Toolbar>
+                </headerToolbar>
+                    <columns>
+                        <Column id="colchave">
+                            <Text id="txtchave" text="Chave"/>
+                        </Column>
+                        <Column id="colvalor">
+                            <Text id="txtvalor" text="Valor"/>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{featModel>key}"/>
+                                <Text text="{featModel>value}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+
+            <!-- FOOTER -->
+            <core:Fragment fragmentName="vcd94xt10z.app1.fioriapp1.fragment.Footer" type="XML" />
+
         </content>
     </Page>
 </mvc:View>

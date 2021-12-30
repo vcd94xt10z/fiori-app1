@@ -11,8 +11,6 @@ function (BaseController,MessageBox,JSONModel) {
 
     return BaseController.extend("vcd94xt10z.app1.fioriapp1.controller.ProductDetail", {
         onInit: function () {
-            console.log("ProductDetail controller");
-
             var oRouter = this.getRouter();
 
             // necessário para ler o parâmetro da URL
@@ -53,6 +51,20 @@ function (BaseController,MessageBox,JSONModel) {
 
             var oModelProd = new JSONModel(productFound);
             oView.setModel(oModelProd,"product");
+
+            var featList = [
+                {
+                    "key": "Potencia",
+                    "value": "10w",
+                    "sequence": 1
+                },{
+                    "key": "Cor",
+                    "value": "Verde",
+                    "sequence": 2
+                }
+            ];
+            var oModelFeat = new JSONModel({"featList":featList});
+            oView.setModel(oModelFeat,"featModel");
 
             // Exemplo para carregar dados de forma local (somente nesse controller)
             /*

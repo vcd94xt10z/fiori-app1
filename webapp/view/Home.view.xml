@@ -54,12 +54,10 @@
 					</VBox>
 				</CustomListItem>
 			</f:GridList>
-				</Panel>
+		</Panel>
 
-            
-
-            <!-- FOOTER -->
-            <core:Fragment fragmentName="vcd94xt10z.app1.fioriapp1.fragment.Footer" type="XML" />
+        <!-- FOOTER -->
+        <core:Fragment fragmentName="vcd94xt10z.app1.fioriapp1.fragment.Footer" type="XML" />
 
         </content>
     </Page>
