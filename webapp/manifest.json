@@ -91,7 +91,10 @@
         "viewPath": "vcd94xt10z.app1.fioriapp1.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": "TargetHome"
+        }
       },
       "routes": [
         {

@@ -3,13 +3,27 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
 >
     <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onPageBack">
         <content>
             <!-- HEADER -->
             <mvc:XMLView viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
             
-            <Text text="ProductDetail"/>
+            <l:BlockLayout id="BlockLayout" background="Dashboard">
+                <l:BlockLayoutRow accentCells="Accent1">
+                    <l:BlockLayoutCell
+                            id="Accent1"
+                            title="">
+                        <Image id="productImage" src="https://static.hayapek.com.br/produtos/{product>/productid}/500/1.jpg" width="100%" press="onOpenImage"/>
+                    </l:BlockLayoutCell>
+                    <l:BlockLayoutCell
+                            title="">
+                        <Text text="{product>/name}"/>
+                        <Text text="{product>/price}"/>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
         </content>
     </Page>
 </mvc:View>

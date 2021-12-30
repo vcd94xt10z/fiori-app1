@@ -2,9 +2,11 @@
  * Controller para os detalhes do produto
  */
 sap.ui.define([
-    "vcd94xt10z/app1/fioriapp1/controller/BaseController"
+    "vcd94xt10z/app1/fioriapp1/controller/BaseController",
+    "sap/m/MessageBox",
+    "sap/ui/model/json/JSONModel"
 ],
-function (BaseController) {
+function (BaseController,MessageBox,JSONModel) {
     "use strict";
 
     return BaseController.extend("vcd94xt10z.app1.fioriapp1.controller.ProductDetail", {
@@ -22,17 +24,38 @@ function (BaseController) {
          * @param oEvent 
          */
         _onRouteMatched : function (oEvent) {
-			var oArgs, oView;
-
-			oArgs = oEvent.getParameter("arguments");
-			oView = this.getView();
-
-			console.log(oArgs.rewrite);
-
+            var that  = this;
+            var oView = this.getView();
+			var oArgs = oEvent.getParameter("arguments");
+			
             // Exemplo para carregar dados de forma global (definido no manifest)
-            window.productList = this.getOwnerComponent().getModel("productList").getData();
+            var productList = this.getOwnerComponent().getModel("productList").getData();
+
+            var productFound = null;
+            for(var i in productList){
+                var p = productList[i];
+                if(p.rewrite == oArgs.rewrite){
+                    productFound = p;
+                    break;
+                }
+            }
+
+            if(productFound == null){
+                var message = "Nenhum produto encontrado com a URL "+oArgs.rewrite;
+
+                MessageBox.error(message, {
+                    onClose: function () {
+                        that.getRouter().navTo("RouteHome");
+                    }
+                });
+                return;
+            }
+
+            var oModelProd = new JSONModel(productFound);
+            oView.setModel(oModelProd,"product");
 
             // Exemplo para carregar dados de forma local (somente nesse controller)
+            /*
             if(window.productList.length == 0){
                 var oModel = new sap.ui.model.json.JSONModel();
                 oModel.loadData("/model/productList.json");
@@ -40,8 +63,12 @@ function (BaseController) {
                     window.productList = oModel.getData();
                 });
             }
+            */
 
-            
+            // deixando disponível no console
+            window.view        = oView;
+            window.product     = productFound;
+            window.productList = productList;
 		}
     });
 });

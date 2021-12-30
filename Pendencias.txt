@@ -1,4 +1,4 @@
-( ) Formatação de valores monetários
+(x) Formatação de valores monetários
 ( ) Detalhes do produto
 ( ) Add Produto no carrinho (memoria)
 ( ) Exibir carrinho
