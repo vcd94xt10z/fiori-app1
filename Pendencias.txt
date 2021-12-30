@@ -1,0 +1,6 @@
+( ) Formatação de valores monetários
+( ) Detalhes do produto
+( ) Add Produto no carrinho (memoria)
+( ) Exibir carrinho
+( ) Formulário de Login do Cliente
+( ) Formulário de Cadastro do cliente

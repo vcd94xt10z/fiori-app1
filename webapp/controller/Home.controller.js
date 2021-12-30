@@ -5,12 +5,15 @@ sap.ui.define([
     "vcd94xt10z/app1/fioriapp1/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
+	"sap/ui/model/FilterOperator",
+    "../model/formatter"
 ],
-    function (BaseController,JSONModel,Filter,FilterOperator) {
+    function (BaseController,JSONModel,Filter,FilterOperator,formatter){
         "use strict";
 
         return BaseController.extend("vcd94xt10z.app1.fioriapp1.controller.Home", {
+            formatter: formatter,
+            
             onInit: function () {
                 console.log("Home controller");
 

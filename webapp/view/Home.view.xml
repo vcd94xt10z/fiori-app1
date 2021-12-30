@@ -8,6 +8,7 @@
     xmlns:f="sap.f"
 	xmlns:grid="sap.ui.layout.cssgrid"
 	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
 >
     <Page id="page" title="{i18n>title}">
         <content>
@@ -42,7 +43,11 @@
 							</layoutData>
 							<Image src="https://static.hayapek.com.br/produtos/{view>productid}/250/1.jpg" width="100%" press="onOpenProduct"/>
 							<Title text="{view>name}" wrapping="true"/>
-							<Label text="{view>price}" wrapping="true" />
+							<Label text="R$ {
+								path : 'view>price',
+								formatter : '.formatter.price'
+							}" wrapping="true" />
+							
 							<Button text="Comprar" press="onCart"/>
 						</VBox>
 					</VBox>
