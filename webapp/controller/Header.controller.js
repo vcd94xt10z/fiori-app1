@@ -10,6 +10,7 @@ function (BaseController) {
     return BaseController.extend("vcd94xt10z.app1.fioriapp1.controller.Header", {
         onInit: function () {
             console.log("Header controller");
+            this.updateBasketUI();
         }
     });
 });

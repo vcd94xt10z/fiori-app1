@@ -7,7 +7,7 @@
     <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onPageBack">
         <content>
             <!-- HEADER -->
-            <mvc:XMLView viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
+            <mvc:XMLView id="HeaderView" viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
 
             <Text text="Cart"/>
         </content>

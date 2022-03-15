@@ -9,12 +9,13 @@
 	xmlns:grid="sap.ui.layout.cssgrid"
 	xmlns:l="sap.ui.layout"
 	xmlns:u="sap.ui.unified"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 >
     <Page id="page" title="{i18n>title}"> 
         <content>
 		
             <!-- HEADER -->
-            <mvc:XMLView viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
+            <mvc:XMLView id="HeaderView" viewName="vcd94xt10z.app1.fioriapp1.view.Header"/>
 
             <!-- CONTENT -->
 
@@ -49,7 +50,7 @@
 								formatter : '.formatter.price'
 							}" wrapping="true" />
 							
-							<Button text="Comprar" press="onCart"/>
+							<Button text="Comprar" press="onComprar" app:productid="{view>productid}"/>
 						</VBox>
 					</VBox>
 				</CustomListItem>
