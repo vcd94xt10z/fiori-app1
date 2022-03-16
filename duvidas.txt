@@ -1,1 +1,6 @@
 Como acessar uma view de outra view para acessar um elemento?
+Como criar uma classe independente para colocar o código?
+
+---
+
+Criar backend dentro do próprio app fiori em nodejs para gravar os dados em um banco de dados local, like sql lite.

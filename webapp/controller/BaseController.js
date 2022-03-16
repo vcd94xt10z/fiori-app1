@@ -8,12 +8,13 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageBox",
     "sap/m/MessageToast",
-    "../model/formatter"
+    "../model/formatter",
+    "../class/Basket"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,UIComponent,History,JSONModel,MessageBox,MessageToast,formatter) {
+    function (Controller,UIComponent,History,JSONModel,MessageBox,MessageToast,formatter,Basket) {
         "use strict";
 
         return Controller.extend("vcd94xt10z.app1.fioriapp1.controller.BaseController", {
@@ -32,6 +33,9 @@ sap.ui.define([
             },
 
             addItemToBasket: function(productid){
+                //var b = new Basket();
+                //b.addItemToBasket(productid,2);
+
                 // obtendo o objeto completo
                 var basket = this.getBasketObject();
 
